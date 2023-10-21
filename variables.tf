@@ -1,3 +1,8 @@
+variable "vm_name" {
+  type        = string
+  description = "Please provide a Virtual Machine Name [Default: test-vm-one]"
+}
+
 variable "resource_group_name" {
   type        = string
   description = "Name of Existing Resource Group [Required]"
@@ -11,12 +16,6 @@ variable "location" {
 variable "subnet_id" {
   type        = string
   description = "Please provide existing subnet ID [Required]"
-}
-
-variable "vm_name" {
-  type        = string
-  description = "Please provide a Virtual Machine Name [Default: test-vm-one]"
-  default     = "test-vm-one"
 }
 
 variable "create_public_ip" {
