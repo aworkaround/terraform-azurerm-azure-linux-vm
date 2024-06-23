@@ -41,7 +41,7 @@ resource "azurerm_network_interface" "nic" {
 
   ip_configuration {
     name                          = "primary"
-    subnet_id                     = var.create_public_ip ? azurerm_subnet.snet[0].id : local.subnet_id
+    subnet_id                     = var.create_vnet_and_subnet ? azurerm_subnet.snet[0].id : local.subnet_id
     private_ip_address_allocation = local.private_ip_allocation_method
     public_ip_address_id          = try(azurerm_public_ip.pip[0].id, null)
   }

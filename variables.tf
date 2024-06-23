@@ -24,8 +24,8 @@ variable "create_public_ip" {
 
 variable "vm_size" {
   type        = string
-  description = "VM SKU [Default: Standard_b1s]"
-  default     = "Standard_b1s"
+  description = "VM SKU [Default: Standard_B1s]"
+  default     = "Standard_B1s"
 }
 
 variable "public_ip_allocation_method" {
