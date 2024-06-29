@@ -17,6 +17,13 @@ resource "azurerm_virtual_network" "vnet" {
   address_space       = local.vnet_address_space
 }
 
+resource "azurerm_network_watcher" "watcher" {
+  count               = local.vnet_and_subnet_count
+  name                = join("-", local.resource_group_name, "network-watcher")
+  location            = azurerm_virtual_network.vnet.location
+  resource_group_name = local.resource_group_name
+}
+
 resource "azurerm_subnet" "snet" {
   count                = local.vnet_and_subnet_count
   address_prefixes     = local.subnet_address_prefixes
