@@ -20,7 +20,7 @@ resource "azurerm_virtual_network" "vnet" {
 resource "azurerm_network_watcher" "watcher" {
   count               = local.vnet_and_subnet_count
   name                = join("-", local.resource_group_name, "network-watcher")
-  location            = azurerm_virtual_network.vnet.location
+  location            = azurerm_virtual_network.vnet[0].location
   resource_group_name = local.resource_group_name
 }
 
